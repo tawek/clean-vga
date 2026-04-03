@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Clean VGA</title>
+    <style>
+        @font-face {
+            font-family: "clean-vga";
+            src: url("../Clean_VGA_9x16.ttf") format("truetype");
+        }
+
+        body {
+            margin: 24px;
+            font-family: sans-serif;
+            color: #111;
+            line-height: 1.4;
+        }
+
+        h1, h2, h3, p, li {
+            font-family: sans-serif;
+        }
+
+        .sample {
+            border: 1px solid #000;
+            padding: 10px;
+            margin: 10px 0 18px;
+            background: #fff;
+        }
+
+        .sample-content,
+        .sample-content * {
+            font-family: "clean-vga", monospace;
+        }
+
+        .sample-content pre,
+        .sample-content p {
+            margin: 0;
+            white-space: pre-wrap;
+        }
+
+        .browser-block {
+            margin-bottom: 28px;
+        }
+
+        .sizes {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 12px;
+        }
+
+        .png-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 12px;
+        }
+
+        .sample img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+            image-rendering: pixelated;
+            image-rendering: crisp-edges;
+            -ms-interpolation-mode: nearest-neighbor;
+        }
+    </style>
+</head>
+<body>
+    <h1>Clean VGA</h1>
+    <p>Browser-rendered samples from the TTF, followed by the actual embedded bitmap strikes stored in the font for low-DPI displays.</p>
+
+    <h2>Browser-rendered samples</h2>
+
+    <div class="browser-block">
+        <h3>Free text</h3>
+        <p>Rendered by the browser from the TTF at 16px.</p>
+        <div class="sample">
+            <div class="sample-content" style="font-size: 16px;">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="browser-block">
+        <h3>Python code</h3>
+        <p>Rendered by the browser from the TTF at 16px.</p>
+        <div class="sample">
+            <div class="sample-content" style="font-size: 16px;">
+                <pre>def fib(n):
+    if n &lt; 2:
+        return n
+    return fib(n-1) + fib(n-2)</pre>
+            </div>
+        </div>
+    </div>
+
+    <div class="browser-block">
+        <h3>C code</h3>
+        <p>Rendered by the browser from the TTF at 16px.</p>
+        <div class="sample">
+            <div class="sample-content" style="font-size: 16px;">
+                <pre>#include &lt;stdio.h&gt;
+
+int main(void) {
+    printf("Hello, World!\n");
+    return 0;
+}</pre>
+            </div>
+        </div>
+    </div>
+
+    <div class="browser-block">
+        <h3>Console listing</h3>
+        <p>Rendered by the browser from the TTF at 16px.</p>
+        <div class="sample">
+            <div class="sample-content" style="font-size: 16px;">
+                <pre>$ ls -l
+total 12
+-rw-r--r-- 1 root root 123 Jan  1  1970 a
+-rw-r--r-- 1 root root 456 Jan  1  1970 b
+-rw-r--r-- 1 root root 789 Jan  1  1970 c</pre>
+            </div>
+        </div>
+    </div>
+
+    <div class="browser-block">
+        <h3>Browser-rendered size sweep</h3>
+        <p>Clean VGA rendered directly by the browser from the TTF.</p>
+        <div class="sizes">
+            <div>
+                <p>8px</p>
+                <div class="sample">
+                    <div class="sample-content" style="font-size: 8px;">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <p>10px</p>
+                <div class="sample">
+                    <div class="sample-content" style="font-size: 10px;">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <p>12px</p>
+                <div class="sample">
+                    <div class="sample-content" style="font-size: 12px;">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <p>14px</p>
+                <div class="sample">
+                    <div class="sample-content" style="font-size: 14px;">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <p>16px</p>
+                <div class="sample">
+                    <div class="sample-content" style="font-size: 16px;">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <p>18px</p>
+                <div class="sample">
+                    <div class="sample-content" style="font-size: 18px;">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <p>20px</p>
+                <div class="sample">
+                    <div class="sample-content" style="font-size: 20px;">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h2>Embedded bitmap PNG samples</h2>
+    <p>These are rendered from the actual embedded bitmap strikes stored in the TTF at 14px, 16px, 18px, and 20px.</p>
+
+    <h3>Free text</h3>
+    <div class="png-grid">
+        <div><p>14px bitmap strike</p><div class="sample"><img src="img/lorem-14px.png" alt="Lorem 14px bitmap sample"></div></div>
+        <div><p>16px bitmap strike</p><div class="sample"><img src="img/lorem-16px.png" alt="Lorem 16px bitmap sample"></div></div>
+        <div><p>18px bitmap strike</p><div class="sample"><img src="img/lorem-18px.png" alt="Lorem 18px bitmap sample"></div></div>
+        <div><p>20px bitmap strike</p><div class="sample"><img src="img/lorem-20px.png" alt="Lorem 20px bitmap sample"></div></div>
+    </div>
+
+    <h3>Python code</h3>
+    <div class="png-grid">
+        <div><p>14px bitmap strike</p><div class="sample"><img src="img/python-14px.png" alt="Python 14px bitmap sample"></div></div>
+        <div><p>16px bitmap strike</p><div class="sample"><img src="img/python-16px.png" alt="Python 16px bitmap sample"></div></div>
+        <div><p>18px bitmap strike</p><div class="sample"><img src="img/python-18px.png" alt="Python 18px bitmap sample"></div></div>
+        <div><p>20px bitmap strike</p><div class="sample"><img src="img/python-20px.png" alt="Python 20px bitmap sample"></div></div>
+    </div>
+
+    <h3>C code</h3>
+    <div class="png-grid">
+        <div><p>14px bitmap strike</p><div class="sample"><img src="img/c-14px.png" alt="C 14px bitmap sample"></div></div>
+        <div><p>16px bitmap strike</p><div class="sample"><img src="img/c-16px.png" alt="C 16px bitmap sample"></div></div>
+        <div><p>18px bitmap strike</p><div class="sample"><img src="img/c-18px.png" alt="C 18px bitmap sample"></div></div>
+        <div><p>20px bitmap strike</p><div class="sample"><img src="img/c-20px.png" alt="C 20px bitmap sample"></div></div>
+    </div>
+
+    <h3>Console listing</h3>
+    <div class="png-grid">
+        <div><p>14px bitmap strike</p><div class="sample"><img src="img/listing-14px.png" alt="Listing 14px bitmap sample"></div></div>
+        <div><p>16px bitmap strike</p><div class="sample"><img src="img/listing-16px.png" alt="Listing 16px bitmap sample"></div></div>
+        <div><p>18px bitmap strike</p><div class="sample"><img src="img/listing-18px.png" alt="Listing 18px bitmap sample"></div></div>
+        <div><p>20px bitmap strike</p><div class="sample"><img src="img/listing-20px.png" alt="Listing 20px bitmap sample"></div></div>
+    </div>
+</body>
+</html>
